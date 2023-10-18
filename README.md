@@ -20,3 +20,5 @@ How can adversaries with malicious intent manipulate the recognized activities?
 
 # Contributors
 
+![Contributors](https://contrib.rocks/image?repo=joshuawe/time-series-robustness)
+
