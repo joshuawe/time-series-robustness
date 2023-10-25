@@ -25,7 +25,7 @@ How can adversaries with malicious intent manipulate the recognized activities?
 
 To use and reproduce clone this repository and then run the following command:
 ```bash
-pip install -e
+pip install -e .
 ```
 
 # Dataset
