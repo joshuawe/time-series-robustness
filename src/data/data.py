@@ -86,4 +86,4 @@ def pca_on_data(df: pd.DataFrame, n_components: int) -> pd.DataFrame:
     X_new = pd.DataFrame(X_new)
     
     print(f"Performed PCA. \nKept an Explained variance ratio of : {np.sum(pca.explained_variance_ratio_):.2%} \nNumber of components: {pca.n_components_} / {df.shape[1]}")
-    return X_new
+    return X_new, pca
