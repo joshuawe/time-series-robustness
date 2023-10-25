@@ -7,7 +7,7 @@
   <a href="https://GitHub.com/joshuawe/time-series-robustness/commits">
     <img src="https://badgen.net/github/commits/joshuawe/time-series-robustness" alt="GitHub commits">
   </a>
-  <a href="https://GitHub.com/Naereen/badges/graphs/contributors/">
+  <a href="https://github.com/joshuawe/time-series-robustness/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/joshuawe/time-series-robustness.svg" alt="GitHub contributors">
   </a>
   <a href="https://GitHub.com/joshuawe/time-series-robustness/issues/">
@@ -32,6 +32,6 @@ How can adversaries with malicious intent manipulate the recognized activities?
 # Sources
 
 # Contributors
-
-![Contributors](https://contrib.rocks/image?repo=joshuawe/time-series-robustness)
-
+<a href="https://github.com/joshuawe/time-series-robustness/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=joshuawe/time-series-robustness" alt="GitHub contributors">
+</a>
