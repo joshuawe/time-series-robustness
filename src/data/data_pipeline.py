@@ -15,17 +15,18 @@ def data_pipeline(
     pca_components = 100
 
     # load data, normalize
-    df_X_train, df_y_train = load_data(path_X_train, path_y_train, normalize=normalize)
+    df_X_train, df_y_train = load_data(path_X_train, path_y_train, normalize=False)
     df_X_test, df_y_test = load_data(path_X_test, path_y_test, normalize=False)
     
     # save normalization parameters
     df_X_mean = df_X_train.mean()
     df_X_std = df_X_train.std()
     
-    # normalize test set
+    # normalize sets
+    df_X_train = (df_X_train - df_X_mean) / df_X_std
     df_X_test = (df_X_test - df_X_mean) / df_X_std
     
-    #save normalization parameters
+    # save normalization parameters
     df_X_mean.to_csv(data_path + "processed/X_train_mean.csv", index=False)
     df_X_std.to_csv(data_path + "processed/X_train_std.csv", index=False)
     
@@ -43,6 +44,11 @@ def data_pipeline(
     pd.DataFrame(X_train).to_csv(data_path + "processed/X_train.csv", index=False)
     pd.DataFrame(X_val).to_csv(data_path + "processed/X_val.csv", index=False)
     pd.DataFrame(X_test).to_csv(data_path + "processed/X_test.csv", index=False)
+    pd.DataFrame(y_train).to_csv(data_path + "processed/y_train.csv", index=False)
+    pd.DataFrame(y_test).to_csv(data_path + "processed/y_test.csv", index=False)
+    pd.DataFrame(df_y_test).to_csv(data_path + "processed/y_test_full.csv", index=False)
+    
+    return
     
     
     
