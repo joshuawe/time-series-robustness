@@ -1,9 +1,11 @@
+from ast import arg
 from data.human_activity_recognition_data_pipeline import load_postprocessed_dataset
 from models.lstm_model import Model as LSTMModel
 import torch
 from torch.utils.data import DataLoader, random_split
 import os
 import yaml
+import argparse
 
 # set current working directory
 # os.chdir("./time-series-robustness")
@@ -50,6 +52,11 @@ def LSTMModel_experiment(config_file = "./src/config.yaml", version='1.0'):
     model.evaluate()
 
 if __name__ == '__main__':
-    config_file = "./src/config.yaml"
-    exp_version = '1.0'
-    LSTMModel_experiment(config_file, exp_version)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config_file', type=str, default="./src/config.yaml")
+    parser.add_argument('--exp_version', type=str, default='1.0')
+    args = parser.parse_args()
+    print("Experiment version: ", args.exp_version)
+    print("Config file: ", args.config_file)
+    
+    LSTMModel_experiment(args.config_file, args.exp_version)
