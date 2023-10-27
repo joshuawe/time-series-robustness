@@ -1,6 +1,6 @@
 # %%
 from utils import load_datasets
-from model import Model
+from lstm_model import Model
 import torch
 from torch.utils.data import DataLoader
 

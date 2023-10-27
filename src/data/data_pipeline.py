@@ -7,7 +7,7 @@ def data_pipeline(
             path_y_train,
             path_X_test,
             path_y_test,
-            data_path)
+            data_path):
 
     # configs
     normalize = True

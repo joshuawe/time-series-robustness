@@ -1,0 +1,24 @@
+experiments:
+  - version: '1.0'
+    lstm_model:
+        dataset_path: './src/data/postprocessed_HAR_dataset'
+        model:
+          in_features: 9
+          num_classes: 6
+          hidden_size: [256, 128]
+        training:
+          epochs: 1
+          batch_size: 64
+          learning_rate: 0.001
+
+  - version: '2.0'
+    lstm_model:
+      dataset_path: './src/data/postprocessed_HAR_dataset'
+      model:
+        in_features: 324
+        num_classes: 632
+        hidden_size: [256, 128, 64]
+      training:
+        epochs: 10
+        batch_size: 64
+        learning_rate: 0.001
