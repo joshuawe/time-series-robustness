@@ -8,16 +8,19 @@ import yaml
 import argparse
 
 # set current working directory
-# os.chdir("./time-series-robustness")
+os.chdir("./time-series-robustness")
+
+# set seed for reproducibility
+torch.manual_seed(0)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def load_config(config_file, model_name, version):
     with open(config_file, 'r') as stream:
-        config = yaml.safe_load(stream)['experiments']
+        config = yaml.safe_load(stream)['experiments'][model_name]
     for item in config:
         if item.get("version") == version:
-            return item[model_name]
+            return item
     raise ValueError(f"Version {version} not found in config file {config_file}")
 
 def LSTMModel_experiment(config_file = "./src/config.yaml", version='1.0'):
@@ -58,5 +61,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     print("Experiment version: ", args.exp_version)
     print("Config file: ", args.config_file)
-    
+
     LSTMModel_experiment(args.config_file, args.exp_version)
